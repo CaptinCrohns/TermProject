@@ -1,2 +1,13 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Welcome to THC-easoned Edibles</h1>
+<h2>All Categories</h2>
+<% @categories.each do |cat| %>
+ <h3><%= cat.name %> </h3>
+
+ <% cat.products.each do |prod| %>
+  <h3><%= prod.name %> </h3>
+  <p>Price: <%= prod.price %></p>
+  <p>Description: <%= prod.description %></p>
+
+ <%end %>
+
+ <%end %>
