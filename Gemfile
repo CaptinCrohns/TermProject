@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Project Related Gems
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.3'

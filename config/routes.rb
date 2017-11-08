@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'products/index'
+
+  get 'products/show'
+
   root to: 'home#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
