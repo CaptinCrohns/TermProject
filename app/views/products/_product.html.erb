@@ -1,0 +1,10 @@
+<% if display_link %>
+<h2><%= link_to product.name, product_path(product) %> </h2>
+<p><%= product.category.name  %> </p>
+<% else %>
+<h2><%= product.name %> </h2>
+<p><%= product.description %> </p>
+<p><%= product.price %> </p>
+<p><%= image_tag product.image %></p>
+
+<% end %>
