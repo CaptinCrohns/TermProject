@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3', group: [:development, :test]
+gem 'sqlite3', group: [:development, :test]
 # postgres for production database
 gem 'pg', group: :production
 # 12 factor for Heroku
@@ -63,3 +63,5 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'font-awesome-rails'
