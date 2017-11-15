@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300'%>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <!-- <%= render partial: 'common/header' %> -->
+    <!-- Code was here for header -->
     <!-- Off screen navigation -->
     <div id="sidr">
       <ul>
@@ -170,27 +172,7 @@
     </div>
 
     <div class="main-container">
-      <header class="fullscreen-element">
-        <div class="background-image-holder parallax-background overlay">
-          <%= image_tag('bg-7.jpg', class: 'background-image', alt:'Background') %>
-        </div>
-
-        <div class="container align-vertical hero">
-          <div class="row">
-            <div class="col-md-5 col-sm-5 col-md-offset-7 col-sm-offset-7 text-left">
-              <h1>Modern Chair</h1>
-              <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
-              <div class="button-group">
-                <a href="index.html#" class="btn btn-default">Purchase</a>
-                <a href="index.html#" class="btn btn-primary">Shop Now</a>
-              </div>
-            </div>
-          </div>
-          <!--end of row-->
-        </div>
-        <!--end of container-->
-      </header>
-
+      <%= render partial: 'common/header' %>
       <div class="action-bar">
         <div class="container">
           <div class="row">
@@ -202,12 +184,12 @@
             <div class="col-sm-4">
               <a href="index.html#">
                 <span data-icon="/" class="icon"></span>
-                <span class="text">Adjustable</span></a>
+                <span class="text">Multiple Varieties</span></a>
             </div>
             <div class="col-sm-4">
               <a href="index.html#">
                 <span data-icon="7" class="icon"></span>
-                <span class="text">Inovative</span></a>
+                <span class="text">Latest Products</span></a>
             </div>
           </div>
           <!-- /.row -->
