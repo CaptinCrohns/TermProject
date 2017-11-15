@@ -13,57 +13,7 @@
   <body>
     <!-- Code was here for header -->
     <!-- Off screen navigation -->
-    <div id="sidr">
-      <ul>
-        <li>
-          <a class="side-logo" href="index.html">Chair<span class="logo-dot accent-bg"></span></a>
-        </li>
-        <li class="active">
-          <a href="index.html#">Modern Chairs</a>
-        </li>
-        <li>
-          <a href="index.html#">Sofas</a>
-        </li>
-        <li>
-          <a href="index.html#">Handmade</a>
-        </li>
-        <li>
-          <a href="index.html#">Industrial</a>
-        </li>
-        <li>
-          <a href="index.html#">For office</a>
-        </li>
-        <li class="divider">
-          <span></span></li>
-        <li>
-          <a href="privacy.html">Privacy</a>
-        </li>
-        <li>
-          <a href="terms.html">Terms & conditions</a>
-        </li>
-        <li>
-          <a href="404.html">404 Error</a>
-        </li>
-      </ul>
-
-      <div class="side-social">
-        <a href="index.html#">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="index.html#">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a href="index.html#">
-          <i class="fa fa-google-plus"></i>
-        </a>
-        <a href="index.html#">
-          <i class="fa fa-pinterest"></i>
-        </a>
-        <a href="index.html#">
-          <i class="fa fa-instagram"></i>
-        </a>
-      </div>
-    </div>
+    <%= render partial: 'common/sidr' %>
 
     <div class="nav-container">
       <nav class="navbar navbar-default">
@@ -170,9 +120,9 @@
         <!-- /.container -->
       </nav>
     </div>
-
+    <%= render partial: 'common/header' %>
     <div class="main-container">
-      <%= render partial: 'common/header' %>
+
       <div class="action-bar">
         <div class="container">
           <div class="row">
@@ -353,31 +303,6 @@
               <h2 class="page-title">Modern Chair<span class="accent-color">.</span></h2>
               <p class="description">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
               <a href="index.html#" class="btn btn-primary">Shop Now</a>
-            </div>
-          </div>
-          <!--end of row-->
-        </div>
-        <!--end of container-->
-      </section>
-
-      <section class="newsletter accent-bg">
-        <div class="background-image-holder overlay accent">
-          <%= image_tag('bg-4.jpg', class: 'background-image', alt:'Background') %>
-
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5 text-left">
-              <h2 class="page-title">Join our newsletter</h2>
-              <p>Bemporibus autem quibusdam et aut officiis debitis autem quibusdam et aut officiis debitis.</p>
-            </div>
-            <div class="col-md-4">
-              <form class="newsletter-form">
-                <input type="text" name="email" id="email" placeholder="Your email address">
-              </form>
-            </div>
-            <div class="col-md-3">
-              <a href="index.html#" class="btn btn-primary">Join Now</a>
             </div>
           </div>
           <!--end of row-->
