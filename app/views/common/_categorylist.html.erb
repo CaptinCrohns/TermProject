@@ -1,0 +1,25 @@
+<section class="products-grid">
+  <div class="container">
+    <div class="row products-container">
+      <% @categories.each do |category| %>
+        <% if display_all_categories %>
+          <div class="col-md-4 col-sm-6 col-xs-12 product">
+
+            <div class="product-details text-center">
+              <div class="align-vertical">
+                <h3><%= category.name %></h3>
+                <a href="index.html#" class="btn btn-primary">
+                  <i class="fa fa-shopping-cart"></i>
+                  View all</a>
+                <p class="product-price"></div>
+              </div>
+            </div>
+
+          <% end %>
+
+        <% end %>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
