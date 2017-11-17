@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   else
     @products = Product.all.order("created_at DESC")
   end
+
   end
   def featured
     @products = Product.all
