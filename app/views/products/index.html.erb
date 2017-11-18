@@ -5,9 +5,5 @@
   <h4>There are no products containing the term
     <%= params[:search] %>.</h4>
 <% end %>
-<% if @categories.blank? %>
-  <h4>There are no categories containing the term
-    <%= params[:search] %>.</h4>
-<% end %>
 
-<%= render partial: 'common/list' , locals: {display_all_products:true, display_featured:false}%>
+<%= render partial: 'common/list' , locals: {display_all_products:true, display_featured:false, display_single_product: false}%>

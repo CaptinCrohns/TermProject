@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    @randomProduct = Product.order("RANDOM()").first
     if params[:search]
     @products = Product.search(params[:search]).order("created_at DESC")
   else
@@ -13,6 +14,12 @@ class ProductsController < ApplicationController
     @categories = Category.all
   end
   def show
+
     @product = Product.find(params[:number].to_i)
+  end
+  def shop
+
+    @products = Product.all
+
   end
 end

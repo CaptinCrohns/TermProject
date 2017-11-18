@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row products-container">
 
-      <% @categories.each do |category| %>
+
               <div class="col-md-4 col-sm-6 col-xs-12 product">
             <div class="product-details text-center">
               <div class="align-vertical">
-                <h3><%= category.name %></h3>
+                <h3><%= @category.name %></h3>
                 <a href="index.html#" class="btn btn-primary">
                   <i class="fa fa-shopping-cart"></i>
                   View all</a>
@@ -14,7 +14,7 @@
               </div>
             </div>
 
-          <% end %>
+
       </div>
       <!-- /.row -->
     </div>

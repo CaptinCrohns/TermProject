@@ -4,9 +4,7 @@ class PagesController < ApplicationController
     @categories = Category.all
   end
 
-  def shop
-    @products = Product.all
-  end
+
 
   def contact
   end
