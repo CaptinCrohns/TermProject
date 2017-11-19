@@ -1,16 +1,11 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all params
-    @randomProduct = Product.order("RANDOM()").first
-    if params[:search]
-    @products = Product.search(params[:search]).order("created_at DESC")
-  else
-    @products = Product.all.order("created_at DESC")
-  end
+
 
   end
   def featured
-    @products = Product.all params
+    @products = Product.all
     @categories = Category.all
   end
   def show
@@ -18,8 +13,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:number].to_i)
   end
   def shop
+    if params[:search]
+    @products = Product.search(params[:search])
+    else
+      @products = Product.all
 
-    @products = Product.all
+    end
+@products = Kaminari.paginate_array(@products).page(params[:page]).per(3)
 
   end
 end

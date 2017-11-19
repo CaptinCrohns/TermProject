@@ -46,21 +46,8 @@
           </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
     <!-- /.row -->
   </div>
 </section>
-
-<div class="no-padding-top section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <a href="catalog.html#" class="load-more">
-          <i class="fa fa-ellipsis-h"></i>
-        </a>
-      </div>
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
-</div>
+<%= paginate @products %>
