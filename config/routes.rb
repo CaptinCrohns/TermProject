@@ -2,12 +2,9 @@ Rails.application.routes.draw do
 # resources :categories
   root to: 'pages#index', as: 'home'
 
-
-
   get 'pages/contact'
 
   get 'pages/about'
-
    get 'products/', to: 'products#shop', as: 'all_products'
    get 'products/:number', to: 'products#show', as: 'product'
   get 'products/featured', to: 'products#featured', as: 'featured'

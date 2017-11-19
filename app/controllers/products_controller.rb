@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all params
     @randomProduct = Product.order("RANDOM()").first
     if params[:search]
     @products = Product.search(params[:search]).order("created_at DESC")
@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   end
   def featured
-    @products = Product.all
+    @products = Product.all params
     @categories = Category.all
   end
   def show
