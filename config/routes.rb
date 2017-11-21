@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 # resources :categories
+resources :carts
   root to: 'pages#index', as: 'home'
 
   get 'pages/contact'
