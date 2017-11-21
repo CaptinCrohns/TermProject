@@ -133,6 +133,8 @@ input[type="reset"]:active:visited {
   background: none;
   color: #e74c3c;
   border-color: #e74c3c;
+
+
 }
 
 .btn.btn-primary:hover,

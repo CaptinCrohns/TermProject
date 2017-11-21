@@ -26,7 +26,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">THC-easoned<span class="logo-dot accent-bg"></span></a>
+            <a class="navbar-brand" href="/">THC-easoned<span class="logo-dot accent-bg"></span></a>
             <a href="index.html#sidr" class="side-menu-opener mobile">
               <div class="bars">
                 <span class="bar top"></span>
@@ -39,60 +39,28 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="collapse-navigation">
             <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Home
-                  <span class="fa fa-angle-down"></span></a>
-                <ul class="dropdown-menu">
-                  <li class="active">
-                    <a href="index.html">Home Grid</a>
-                  </li>
-                  <li>
-                    <a href="index-list.html">Home List</a>
-                  </li>
-                  <li>
-                    <a href="index-full-width.html">Home Full</a>
-                  </li>
-                  <li>
-                    <a href="index-slider.html">Home Slider</a>
-                  </li>
-                </ul>
+              <li>
+                <a href="/">Home</a>
               </li>
               <li>
-                <a href="about.html">About</a>
+                <a href="pages/about.html">About</a>
               </li>
               <li class="dropdown">
                 <a href="products.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Products
                   <span class="fa fa-angle-down"></span></a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a href="products.html">All Products</a>
+                    <%= link_to 'All Products', :all_products %>
                   </li>
-                  <li>
-                    <a href="products-list.html">Catalog List</a>
-                  </li>
-                  <li>
-                    <a href="products-full-width.html">Catalog Full</a>
-                  </li>
-                  <li>
-                    <a href="product.html">Single Product</a>
-                  </li>
+                  <% @categories.each do |category| %>
+                <li>
+                      <%= link_to category.name, category_path(category) %>
+
+                </li>
+            <% end %>
                 </ul>
               </li>
-              <li class="dropdown">
-                <a href="blog.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Blog
-                  <span class="fa fa-angle-down"></span></a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="blog.html">Blog</a>
-                  </li>
-                  <li>
-                    <a href="blog-list.html">Blog List</a>
-                  </li>
-                  <li>
-                    <a href="blog-single.html">Blog Single</a>
-                  </li>
-                </ul>
-              </li>
+
               <li>
                 <a href="contact.html">
                   <i class="fa fa-paper-plane"></i>

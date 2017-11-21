@@ -1,27 +1,20 @@
 <div id="sidr">
+
   <ul>
     <li>
       <a class="side-logo" href="index.html">THCeasoned<span class="logo-dot accent-bg"></span></a>
     </li>
+
     <li class="active">
       <%= link_to 'Store', :all_products %>
     </li>
+      <% @categories.each do |category| %>
     <li>
-      <a href="categories/2">Edibles</a>
+          <%= link_to category.name, category_path(category) %>
 
     </li>
-    <li>
-      <a href="index.html#">Flowers</a>
-    </li>
-    <li>
-      <a href="categories/2">Concentrates</a>
-    </li>
-    <li>
-      <a href="index.html#">Tinctures/Topicals</a>
-    </li>
-    <li>
-      <a href="index.html#">Accessories</a>
-    </li>
+<% end %>
+
     <li class="divider">
       <span></span></li>
     <li>

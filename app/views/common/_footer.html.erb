@@ -12,13 +12,16 @@
         <form class="newsletter-form">
           <%= form_tag(all_products_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Strains" %>
+  <%=submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
+
 
         </form>
-      </div>
-      <div class="col-md-3">
-        <%= submit_tag "Search", :name => nil %>
-      <% end %>
+
+
+
+
     </div>
+    <% end %>
   </div>
   <!--end of row-->
 </div>

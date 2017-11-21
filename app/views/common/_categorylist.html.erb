@@ -7,10 +7,10 @@
             <div class="product-details text-center">
               <div class="align-vertical">
                 <h3><%= category.name %></h3>
-                <a href="index.html#" class="btn btn-primary">
-                  <i class="fa fa-shopping-cart"></i>
-                  View all</a>
-                <p class="product-price"></div>
+
+                    <%= link_to 'View All', category_path(category), :class => "btn btn-primary" %>
+                <p class="product-price">
+                </div>
               </div>
             </div>
 
