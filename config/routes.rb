@@ -6,7 +6,7 @@ resources :product_items
 
   get 'pages/contact'
 
-  get 'pages/about', to: 'pages#about', as: 'about'
+  get 'about', to: 'pages#about', as: 'about'
    get 'products/', to: 'products#shop', as: 'all_products'
    get 'products/:number', to: 'products#show', as: 'product', number: /\d+/
   get 'products/featured', to: 'products#featured', as: 'featured'
