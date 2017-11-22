@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:index,:show, :shop]
+
   def index
     @products = Product.all params
 

@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:index,:show, :shop, :about, :contact]
   def index
     @products = Product.all
     @categories = Category.all

@@ -4,7 +4,7 @@ resources :carts
 resources :product_items
   root to: 'pages#index', as: 'home'
 
-  get 'pages/contact'
+  get 'contact', to: 'pages#contact', as: 'contact'
 
   get 'about', to: 'pages#about', as: 'about'
    get 'products/', to: 'products#shop', as: 'all_products'

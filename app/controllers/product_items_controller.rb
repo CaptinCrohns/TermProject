@@ -1,13 +1,13 @@
 class ProductItemsController < ApplicationController
-incude CurrentCart
+include CurrentCart
 before_action :set_cart, only: [:create]
 before_action :set_product_item, only: [:show, :destroy]
 
-def Create
+def create
 product = Product.find(params[:product_id])
 @product_item = @cart.add_product(product.id)
 if @product_item.save
-  redirect_to_shop_url, notice: 'Product added to the Cart'
+   redirect_to all_products_url, notice: 'Product added to the Cart'
 else
   render :new
 end
