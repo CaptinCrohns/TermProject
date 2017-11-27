@@ -13,7 +13,8 @@ class OrdersController < ApplicationController
       return
     end
     @order = Order.new
-    # @client_token = Braintree::ClientToken.generate
+    @client_token = Braintree::ClientToken.generate
+    
 end
 def create
   @order = Order.new(order_params)
