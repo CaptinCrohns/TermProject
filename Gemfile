@@ -68,3 +68,4 @@ gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'toastr-rails'
 gem "braintree", "~> 2.79.0"
+gem 'figaro'
