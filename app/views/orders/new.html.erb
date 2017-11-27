@@ -4,7 +4,14 @@
     <h1>Your Order</h1>
    </div>
   </div><!--end of row-->
- 
+
 <br>
 <%= render 'form' %>
 <br>
+
+<!-- Script for Braintree -->
+<script>
+braintree.setup('CLIENT_TOKEN_FROM_SERVER', 'dropin', {
+  container: 'payment-form'
+});
+</script>

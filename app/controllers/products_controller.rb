@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_cart, only: [:index,:show, :shop]
 
   def index
-    @products = Product.all params
+    @products = Product.all #params
 
 
   end
