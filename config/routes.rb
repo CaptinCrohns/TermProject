@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 # resources :categories
 resources :carts
 resources :product_items
+resources :orders
   root to: 'pages#index', as: 'home'
 
   get 'contact', to: 'pages#contact', as: 'contact'

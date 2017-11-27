@@ -3,7 +3,7 @@
   <head>
     <title>Project</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300'%>
 
@@ -16,7 +16,6 @@
 
     <%= render partial: 'common/sidr' %>
 
-  
     <%= render partial: 'common/header' %>
 
     <%= render partial: 'common/message' %>
@@ -35,7 +34,7 @@
                 <span class="text">Multiple Varieties</span></a>
             </div>
             <div class="col-sm-4">
-                <a href="index.html#">
+              <a href="index.html#">
                 <span data-icon="7" class="icon"></span>
                 <span class="text">Featured Products</span></a>
             </div>
@@ -44,15 +43,15 @@
         </div>
         <!-- /.container -->
       </div>
-    <!--  'common/rightad' -->
-        </div>
-        <!--end of container-->
-      </section>
-
+      <!-- 'common/rightad' -->
     </div>
-    <!-- /.main-container -->
-    <%= yield %>
-    <%= render partial: 'common/ad' %>
-    <%= render partial: 'common/footer' %>
-  </body>
+    <!--end of container-->
+  </section>
+
+</div>
+<!-- /.main-container -->
+<%= yield %>
+<%= render partial: 'common/ad' %>
+<%= render partial: 'common/footer' %>
+</body>
 </html>
