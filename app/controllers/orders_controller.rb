@@ -18,8 +18,8 @@ class OrdersController < ApplicationController
 end
 def create
   @order = Order.new(order_params)
-    if @order.save
-      charge
+  if @order.save
+    charge
       if @result.success?
         @order.add_product_items_from_cart(@cart)
         Cart.destroy(session[:cart_id])
@@ -51,7 +51,6 @@ def order_params
 params.require(:order).permit(:name, :email, :address, :city, :province, :country)
 end
 def charge
-
   @result = Braintree::Transaction.sale(
     amount: @cart.total_price,
     payment_method_nonce: params[:payment_method_nonce] )
