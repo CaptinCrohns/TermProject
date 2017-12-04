@@ -9,6 +9,15 @@ class Product < ApplicationRecord
   def self.search(search)
     where("name LIKE ? OR description LIKE ? ", "%#{search}%", "%#{search}%")
   end
+  # def category_search 
+  # @search = params[:search]
+  # @categories = Category.include(:products).where("name LIKE '%#{@search}%'")
+  # end
+  # def product_in_category
+  # @search = params[:search]
+  # @category_id = params[:category]
+  # @products = Category.include(:products).find(@category_id).where("product.name LIKE '%#{@search}%'")
+  # end
 
 def ensure_not_product_item
   if product_items.empty?

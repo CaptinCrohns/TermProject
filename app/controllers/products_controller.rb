@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all #params
+    @categories = Category.all
 
 
   end
@@ -18,10 +19,12 @@ class ProductsController < ApplicationController
   def shop
     if params[:search]
     @products = Product.search(params[:search])
+    # @products = Product.category_search(param[:search])
     else
       @products = Product.all
 
     end
+
 @products = Kaminari.paginate_array(@products).page(params[:page]).per(3)
 
   end

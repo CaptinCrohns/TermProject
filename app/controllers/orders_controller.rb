@@ -48,7 +48,7 @@ def set_order
 @order = Order.find(params[:id])
 end
 def order_params
-params.require(:order).permit(:name, :email, :address, :city, :province, :country)
+params.require(:order).permit(:name, :email, :address, :city, :province)
 end
 def charge
   @result = Braintree::Transaction.sale(

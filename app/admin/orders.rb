@@ -1,7 +1,10 @@
 ActiveAdmin.register Order do
+permit_params :shipped
+
+
   show do |order|
     panel 'Customer Details' do
-      attributes_table_for order, :name, :email, :address, :city, :province, :country, :created_at
+      attributes_table_for order, :name, :email, :address, :city, :province, :created_at
     end
     panel 'Order Details' do
       table_for(order.product_items) do

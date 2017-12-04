@@ -1,4 +1,4 @@
-<h1 class="page-title" style = "text-align:center">Our Store</span><span class="accent-color">.</span></h1>
+<h1 class="page-title" style = "text-align:center">Our Store<span class="accent-color">.</span></h1>
 <section class="product-list">
   <div class="container">
     <% @products.each do |product| %>
@@ -21,7 +21,7 @@
                   <p><%= product.description %></p>
                   <%= button_to product_items_path(product_id: product), class: 'btn btn-default' do %>
                       <i class="fa fa-shopping-cart"></i>
-                    Add to cart</a>
+                    Add to cart
                     <% end %>
                 </div>
               </div>

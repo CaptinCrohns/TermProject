@@ -69,3 +69,4 @@ gem 'kaminari'
 gem 'toastr-rails'
 gem "braintree", "~> 2.79.0"
 gem 'figaro'
+gem 'country_select'
