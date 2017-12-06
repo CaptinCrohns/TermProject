@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:index,:show, :shop]
+  before_action :set_cart, only: %i[index show shop]
   def index
-      @categories = Category.all
+    @categories = Category.all
   end
 
   def show

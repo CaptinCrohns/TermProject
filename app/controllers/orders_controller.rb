@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:new, :create]
-  before_action :set_order, only: [:show, :edit, :destroy]
+  before_action :set_cart, only: %i[new create]
+  before_action :set_order, only: %i[show edit destroy]
 
   def index
     @orders = Order.all
@@ -14,45 +14,50 @@ class OrdersController < ApplicationController
     end
     @order = Order.new
     @client_token = Braintree::ClientToken.generate
+  end
 
-end
-def create
-  @order = Order.new(order_params)
-  if @order.save
-    charge
+  def create
+    @order = Order.new(order_params)
+    if @order.save
+      charge
       if @result.success?
         @order.add_product_items_from_cart(@cart)
         Cart.destroy(session[:cart_id])
-      session[:cart_id] = nil
-      redirect_to all_products_url, notice: 'Thank you for your Order'
-    else
-      flash[:error] = 'Check your cart'
-      redirect_to all_products_url, alert: @result.message
-      @order.destroy
-    end
+        session[:cart_id] = nil
+        redirect_to all_products_url, notice: 'Thank you for your Order'
+      else
+        flash[:error] = 'Check your cart'
+        redirect_to all_products_url, alert: @result.message
+        @order.destroy
+      end
 
     else
-          @client_token = Braintree::ClientToken.generate
+      @client_token = Braintree::ClientToken.generate
       render :new
     end
-end
-def show
-end
+  end
 
-def destroy
-  @order.destroy
+  def show; end
+
+  def destroy
+    @order.destroy
     redirect_to all_products_url, notice: 'Order deleted'
-end
-private
-def set_order
-@order = Order.find(params[:id])
-end
-def order_params
-params.require(:order).permit(:name, :email, :address, :city, :province)
-end
-def charge
-  @result = Braintree::Transaction.sale(
-    amount: @cart.total_price,
-    payment_method_nonce: params[:payment_method_nonce] )
-end
+  end
+
+  private
+
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
+  def order_params
+    params.require(:order).permit(:name, :email, :address, :city, :province)
+  end
+
+  def charge
+    @result = Braintree::Transaction.sale(
+      amount: @cart.total_price,
+      payment_method_nonce: params[:payment_method_nonce]
+    )
+  end
 end
