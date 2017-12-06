@@ -7,6 +7,7 @@ class Order < ApplicationRecord
       product_items << item
     end
   end
+
   def total_price
     product_items.map(&:total_price).sum
   end
