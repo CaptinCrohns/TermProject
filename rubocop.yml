@@ -1,12 +1,16 @@
+# inherit_from: .rubocop_todo.yml
 AllCops:
-  Include:
-    - Rakefile
-    - config.ru
-    - lib/**/*.rake
   Exclude:
-    - db/schema.rb
+    - db/**/*
+    - config/**/*
+    - script/**/*
+    - bin/**/*
+    - test/**/*
+    - app/admin/**/*
     - Gemfile
-    - test/controllers/categories_controller_test.rb
-    - test/controllers/home_controller_test.rb
-    - test/controllers/pages_controller_test.rb
-    - test/controllers/products_controller_test.rb
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 99

@@ -20,16 +20,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     if @order.save
       charge
-      if @result.success?
-        @order.add_product_items_from_cart(@cart)
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        redirect_to all_products_url, notice: 'Thank you for your Order'
-      else
-        flash[:error] = 'Check your cart'
-        redirect_to all_products_url, alert: @result.message
-        @order.destroy
-      end
+      check_result_success
 
     else
       @client_token = Braintree::ClientToken.generate
@@ -45,6 +36,19 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def check_result_success
+    if @result.success?
+      @order.add_product_items_from_cart(@cart)
+      Cart.destroy(session[:cart_id])
+      session[:cart_id] = nil
+      redirect_to all_products_url, notice: 'Thank you for your Order'
+    else
+      flash[:error] = 'Check your cart'
+      redirect_to all_products_url, alert: @result.message
+      @order.destroy
+    end
+  end
 
   def set_order
     @order = Order.find(params[:id])

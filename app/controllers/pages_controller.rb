@@ -7,10 +7,10 @@ class PagesController < ApplicationController
   end
 
   def about
-    @aboutPage = Page.find(2)
+    @about_page = Page.find(2)
   end
 
   def contact
-    @contactPage = Page.find(1)
+    @contact_page = Page.find(1)
   end
 end
