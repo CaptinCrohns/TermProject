@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20171202234905) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -74,12 +77,12 @@ ActiveRecord::Schema.define(version: 20171202234905) do
   end
 
   create_table "product_items", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "cart_id"
+    t.bigint "product_id"
+    t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
-    t.integer "order_id"
+    t.bigint "order_id"
     t.index ["cart_id"], name: "index_product_items_on_cart_id"
     t.index ["order_id"], name: "index_product_items_on_order_id"
     t.index ["product_id"], name: "index_product_items_on_product_id"
@@ -92,7 +95,7 @@ ActiveRecord::Schema.define(version: 20171202234905) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
+    t.bigint "category_id"
     t.string "image"
     t.string "image_file_name"
     t.string "image_content_type"
@@ -102,4 +105,8 @@ ActiveRecord::Schema.define(version: 20171202234905) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
+  add_foreign_key "product_items", "carts"
+  add_foreign_key "product_items", "orders"
+  add_foreign_key "product_items", "products"
+  add_foreign_key "products", "categories"
 end
